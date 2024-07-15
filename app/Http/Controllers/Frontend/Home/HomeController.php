@@ -11,4 +11,8 @@ class HomeController extends Controller
     {
         return view('frontend.components.Home.home');
     }
+
+    public function aboutUs() {
+        return view('frontend.components.About.aboutus');
+    }
 }

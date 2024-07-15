@@ -20,7 +20,7 @@
           </div>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
+        <div class="col-lg-4 col-md-3 footer-links">
           <h4>Useful Links</h4>
           <ul>
             <li><a href="#">Home</a></li>
@@ -31,7 +31,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
+        <div class="col-lg-4 col-md-3 footer-links">
           <h4>Our Services</h4>
           <ul>
             <li><a href="#">Web Design</a></li>
@@ -42,7 +42,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
+        {{-- <div class="col-lg-2 col-md-3 footer-links">
           <h4>Hic solutasetp</h4>
           <ul>
             <li><a href="#">Molestiae accusamus iure</a></li>
@@ -51,9 +51,9 @@
             <li><a href="#">Dilecta</a></li>
             <li><a href="#">Sit quas consectetur</a></li>
           </ul>
-        </div>
+        </div> --}}
 
-        <div class="col-lg-2 col-md-3 footer-links">
+        {{-- <div class="col-lg-2 col-md-3 footer-links">
           <h4>Nobis illum</h4>
           <ul>
             <li><a href="#">Ipsam</a></li>
@@ -62,7 +62,7 @@
             <li><a href="#">Trodelas</a></li>
             <li><a href="#">Flexo</a></li>
           </ul>
-        </div>
+        </div> --}}
 
       </div>
     </div>
