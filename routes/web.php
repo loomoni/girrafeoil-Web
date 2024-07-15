@@ -20,6 +20,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('about-us', [HomeController::class, 'aboutUs']);
+Route::get('services', [HomeController::class, 'services']);
+Route::get('news', [HomeController::class, 'news']);
+Route::get('news/details/id', [HomeController::class, 'newsDetails']);
+Route::get('contact-us', [HomeController::class, 'contactUs']);
 
 Route::middleware([
     'auth:sanctum',

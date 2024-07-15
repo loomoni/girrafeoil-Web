@@ -12,7 +12,28 @@ class HomeController extends Controller
         return view('frontend.components.Home.home');
     }
 
-    public function aboutUs() {
+    public function aboutUs()
+    {
         return view('frontend.components.About.aboutus');
+    }
+
+    public function services()
+    {
+        return view('frontend.components.Services.services');
+    }
+
+    public function news()
+    {
+        return view('frontend.components.News.news');
+    }
+
+    public function newsDetails()
+    {
+        return view('frontend.components.News.newsDetails');
+    }
+
+    public function contactUs()
+    {
+        return view('frontend.components.Contact.contactUs');
     }
 }
