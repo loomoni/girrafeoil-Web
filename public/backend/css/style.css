@@ -6159,6 +6159,10 @@ body.body-small .footer.fixed {
     border-radius: 0.25rem;
 }
 
+.back-btn {
+    width: 7rem;
+}
+
 /* Custom css end */
 
 /* PANELS */

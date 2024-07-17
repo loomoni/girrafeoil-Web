@@ -44,6 +44,14 @@ class SlidersController extends Controller
         return redirect()->back()->with("message", "Slider Added Successfully");
     }
 
+    // Edit view
+    public function edit($id) 
+    {
+        $data = Sliders::find($id);
+
+        return view('backend.home.sliders.edit', compact('data'));
+    }
+
 
     //update about us contents
     public function editsliders(Request $request, $id)

@@ -77,22 +77,28 @@
                             <thead>
                                 <tr>
                                     <th width="3%">#</th>
-                                    <th width="15%">Name</th>
-                                    <th width="50%">Title</th>
-                                    <th width="10%">Action</th>
+                                    <th width="15%">Title</th>
+                                    <th width="50%">Description</th>
+                                    <th width="50%">Image</th>
+                                    <th style="width: 20px">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                <td>1</td>
-                                    <td>Sample1</td>
-                                    <td>Sample 2</td>
-                                    <td>
-                                        <a data-toggle="modal" data-target="#edtSample" data-position="poSample" class="btn btn-primary btn-xs text-white"><i class="fa fa-pencil"></i></a>  
-                                        <a data-toggle="modal" data-target="#delSample" class="btn btn-danger btn-xs text-white"><i class="fa fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                               
+                                <?php $count=0 ?>
+                                    @foreach( $data as $data)
+                                    <?php $count++ ?>
+                                        <tr>
+                                            <td>{{ $count }} </td>
+                                            <td>{{ $data->title }}</td>
+                                            <td>{{ $data->description }}</td>
+                                            <td><img height="100" width="100" src="/backend/img/slidersImages/{{ $data->file }}"></td>
+                                            <td style="width: 11%">
+                                                <a class="btn btn-primary btn-sm" href="{{ url('admin-home/sliders/edit', $data->id) }}"><i class="fa fa-edit" ></i></a>
+                                                <a data-toggle="modal" data-target="#delete{{ $data->id }}" class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i></a>
+                                            </td>
+                                            {{-- @include('backend/sliders/modals/deleteAbout') --}}
+                                        </tr>
+                                    @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -100,7 +106,7 @@
             </div>
         </div>
     </div>
-    @include('backend/Home/sliders/modals/addSliders')
+    {{-- @include('backend/Home/sliders/modals/addSliders') --}}
 
 
     @section('about_script')
