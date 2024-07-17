@@ -15,10 +15,18 @@
             </li>
           
             <li id="dropdown">
-                <a href="#"><i class="fa fa-home" aria-hidden="true"></i> <span class="nav-label">Home</span><span class="fa arrow"></span></a>
+                <a href="#" {{ 'admin-home/sliders' == request()->path() ? 'active' : '' }}><i class="fa fa-home" aria-hidden="true"></i> <span class="nav-label">Home</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li><a href="{{ url('admin-home/sliders') }}" id="managestf">Sliders</a></li>
+                    <li><a href="{{ url('admin-home/sliders') }}" class="{{ 'admin-home/sliders' == request()->path() ? 'active' : '' }}" id="managestf">Sliders</a></li>
                     <li><a href="{{ url('admin-home/testimonials')}}" id="managestfpos">Testimonials</a></li>
+                </ul>
+            </li>
+
+            <li id="dropdown">
+                <a href="#"><i class="fa-regular fa-address-card"></i>  <span class="nav-label">About us</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a href="{{ url('admin-aboutus/company') }}" id="managestf">About Giraffe</a></li>
+                    <li><a href="{{ url('admin-aboutus/team')}}" id="managestfpos">Team</a></li>
                 </ul>
             </li>
            
