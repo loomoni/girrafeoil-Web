@@ -48,15 +48,15 @@ Route::middleware(['auth'])->group(function ()
         Route::post('sliders/create', [SlidersController::class, 'store']);
         Route::get('sliders/edit/{id}', [SlidersController::class, 'edit']);
         Route::put('sliders/edit/{id}', [SlidersController::class, 'update']);
-        Route::get('sliders/delete/{id}', [SlidersController::class, 'deletesliders']);
+        Route::get('sliders/delete/{id}', [SlidersController::class, 'delete']);
 
         // Testimonials Route
         Route::get('testimonials', [TestimonialsController::class, 'index']);
         Route::get('testimonials/create', [TestimonialsController::class, 'create']);
         Route::post('testimonials/create', [TestimonialsController::class, 'store']);
         Route::get('testimonials/edit/{id}', [TestimonialsController::class, 'edit']);
-        Route::put('testimonials/edit/{id}', [TestimonialsController::class, 'update']);
-        Route::get('testimonials/delete/{id}', [TestimonialsController::class, 'deletesliders']);
+        Route::post('testimonials/edit/{id}', [TestimonialsController::class, 'update']);
+        Route::get('testimonials/delete/{id}', [TestimonialsController::class, 'delete']);
 
     });
 });

@@ -50,50 +50,65 @@ class TestimonialsController extends Controller
     {
         $data = Testimonials::find($id);
 
-        return view('backend.home.Testimonials.edit', compact('data'));
+        
+        if (!$data) {
+            return redirect('admin-home/testimonials')->with('error', 'Testimonial member not found');
+        }
+
+        return view('backend.home.testimonials.edit', compact('data'));
     }
 
 
-    //update about us contents
-    public function editTestimonials(Request $request, $id)
+    //update Testimonials contents
+    public function update(Request $request, $id)
     {
-        
         $data = Testimonials::find($id);
 
-        $file = $request->file;
-
-        if($file)
-        {
-
-        // Delete the old slider image if it exists
-            $oldImagePath = public_path('backend/img/TestimonialsImages') . $data->image;
-            if (file_exists($oldImagePath)) {
-                unlink($oldImagePath);
+        if (!$data) {
+            return redirect('admin-home/testimonials')->with('error', 'Testimonial member not found');
+        }
+    
+        // Handle image update
+        if ($request->hasFile('image')) {
+            // Delete the old slider image if it exists
+            if ($data->image) {
+                $oldImagePath = public_path('/backend/img/TestimonialsImages/') . $data->image;
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
             }
-
-            $imagename=time().'.'.$file->getClientOriginalExtension();
-
-            $request->file->move('backend/img/TestimonialsImages',$imagename);
-
-            $data->file=$imagename;
+    
+            // Upload the new slider image
+            if ($request->hasFile('image')) {
+                $image = $request->file('image');
+                $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();        
+                $image->move(public_path('/backend/img/TestimonialsImages/'), $imageName);
+                $data->image = $imageName;
+            }
         }
 
-        $data->title=$request->title;
-
-        $data->description=$request->description;
-
-        $data->save();
-
-        return redirect()->back()->with("message", "About Us Content Updated Successfully");
-
+    
+        // Update other fields if necessary
+        $data->name = $request->name;
+        $data->title = $request->title;
+        $data->description = $request->description;
+        
+        try {
+            // Save the updated data
+            $data->save();
+            return redirect('admin-home/testimonials')->with('message', 'Testimonials updated successfully');
+        } catch (\Exception $e) {
+            // Log the error or handle it as needed
+            return redirect('admin-home/testimonials')->with('error', 'Error updating a Testimonials');
+        }
 
     }
 
     //Delete Slider content function 
-    public function deleteTestimonials($id)
+    public function delete($id)
     {
         $data = Testimonials::find($id);
         $data->delete();
-        return redirect()->back()->with("deletemessage", "Slider Contents Deleted Succesfully");
+        return redirect()->back()->with("deletemessage", "Testimonial Contents Deleted Succesfully");
     }
 }
