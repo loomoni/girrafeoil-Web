@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\Home\SlidersController;
+use App\Http\Controllers\Backend\Home\TestimonialsController;
 use App\Http\Controllers\Frontend\Home\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -48,6 +49,14 @@ Route::middleware(['auth'])->group(function ()
         Route::get('sliders/edit/{id}', [SlidersController::class, 'edit']);
         Route::put('sliders/edit/{id}', [SlidersController::class, 'update']);
         Route::get('sliders/delete/{id}', [SlidersController::class, 'deletesliders']);
+
+        // Testimonials Route
+        Route::get('testimonials', [TestimonialsController::class, 'index']);
+        Route::get('testimonials/create', [TestimonialsController::class, 'create']);
+        Route::post('testimonials/create', [TestimonialsController::class, 'store']);
+        Route::get('testimonials/edit/{id}', [TestimonialsController::class, 'edit']);
+        Route::put('testimonials/edit/{id}', [TestimonialsController::class, 'update']);
+        Route::get('testimonials/delete/{id}', [TestimonialsController::class, 'deletesliders']);
 
     });
 });
