@@ -1529,9 +1529,9 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
     color: white;
 }
 
-.wrapper {
+/* .wrapper {
     background-color: #04336b !important;
-}
+} */
 
 .navbar-default .landing_link a span.label {
     background: #fff;
@@ -5782,6 +5782,17 @@ body.body-small .footer.fixed {
 .page-heading {
     border-top: 0;
     padding: 0 10px 20px 10px;
+    margin-top: 10px;
+}
+
+.page-heading h2 {
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+    font-size: 14px;
+}
+
+.page-heading a {
+    font-weight: bold;
 }
 
 .panel-heading h1,

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\Home\SlidersController;
 use App\Http\Controllers\Frontend\Home\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,4 +34,18 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('backend.dashboard');
     })->name('dashboard');
+});
+
+Route::middleware(['auth'])->group(function ()
+{
+
+    Route::prefix('admin-home')->group(function () {
+
+        //Sliders
+        Route::get('sliders', [SlidersController::class, 'index']);
+        Route::post('add_sliders', [SlidersController::class, 'addsliders']);
+        Route::put('edit_sliders/{id}', [SlidersController::class, 'editsliders']);
+        Route::get('delete_sliders/{id}', [SlidersController::class, 'deletesliders']);
+
+    });
 });

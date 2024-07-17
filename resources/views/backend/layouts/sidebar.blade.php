@@ -17,7 +17,7 @@
             <li id="dropdown">
                 <a href="#"><i class="fa fa-home" aria-hidden="true"></i> <span class="nav-label">Home</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li><a href="{{ url('sample') }}" id="managestf">Sample one</a></li>
+                    <li><a href="{{ url('admin-home/sliders') }}" id="managestf">Sliders</a></li>
                     <li><a href="" id="managestfpos">Sample two</a></li>
                     <li><a href="" id="managestfcat">Sample three</a></li>
                 </ul>
