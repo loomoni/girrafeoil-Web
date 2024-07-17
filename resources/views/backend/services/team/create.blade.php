@@ -5,12 +5,12 @@
 <main class="app-content">
     <div class="app-title">
         <div>
-            <h1><i class="fa fa-edit"></i>Add About us</h1>
+            <h1><i class="fa fa-edit"></i>Add Team</h1>
         </div>
         <ul class="app-breadcrumb breadcrumb">
             <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-            <li class="breadcrumb-item">About Us</li>
-            <li class="breadcrumb-item"><a href="#">Add About Us</a></li>
+            <li class="breadcrumb-item">Team</li>
+            <li class="breadcrumb-item"><a href="#">Add Team</a></li>
         </ul>
     </div>
 
@@ -21,7 +21,7 @@
     @endif
 
     <div>
-        <a class="btn btn-primary back-btn" href="{{ url('admin/about-us') }}"><i class="fa-solid fa-reply-all"></i>   Back</a>
+        <a class="btn btn-primary back-btn" href="{{ url('admin/team') }}"><i class="fa-solid fa-reply-all"></i>   Back</a>
     </div>
     <div class="row mt-2">
 
@@ -34,18 +34,18 @@
                         @csrf
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label class="control-label">Title</label>
-                                <input name="title" class="form-control @error('title') is-invalid @enderror" type="text" placeholder="Enter Title">
-                                @error('title')
+                                <label class="control-label">Name</label>
+                                <input name="name" class="form-control @error('name') is-invalid @enderror" type="text" placeholder="Enter name">
+                                @error('name')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label class="control-label">Description</label>
-                                <input name="description" class="form-control @error('description') is-invalid @enderror" type="text" placeholder="Enter Description">
-                                @error('description')
+                                <label class="control-label">Title</label>
+                                <input name="title" class="form-control @error('title') is-invalid @enderror" type="text" placeholder="Enter title">
+                                @error('title')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -54,9 +54,9 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label class="control-label">Video Link</label>
-                                <input name="link" class="form-control @error('link') is-invalid @enderror" type="text" placeholder="YouTube Link">
-                                @error('link')
+                                <label class="control-label">Description</label>
+                                <input name="description" class="form-control @error('description') is-invalid @enderror" type="text" placeholder="Enter Description">
+                                @error('description')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

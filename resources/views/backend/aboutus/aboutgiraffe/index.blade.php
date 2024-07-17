@@ -17,7 +17,7 @@
                 <a href="/">Home</a>
             </li>
             <li class="breadcrumb-item active">
-                <strong style="color: #04336b">Sliders</strong>
+                <strong style="color: #04336b">About Us</strong>
             </li>
         </ol>
     </div>
@@ -36,7 +36,7 @@
                     <div>
                         <div class="row">
                             <div class="col-md-2">
-                                <a  href="{{ url('admin/sliders/create') }}"  class="btn btn-primary w-100">Add New</a>
+                                <a  href="{{ url('admin/about-us/create') }}"  class="btn btn-primary w-100">Add New</a>
                             </div>
                         </div>
                     </div>
@@ -91,12 +91,12 @@
                                             <td>{{ $count }} </td>
                                             <td>{{ $data->title }}</td>
                                             <td>{{ $data->description }}</td>
-                                            <td><img height="100" width="100" src="/backend/img/slidersImages/{{ $data->file }}"></td>
+                                            <td><img height="100" width="100" src="/backend/img/AboutUsImages/{{ $data->image }}"></td>
                                             <td style="width: 11%">
-                                                <a class="btn btn-primary btn-sm" href="{{ url('admin/sliders/edit', $data->id) }}"><i class="fa fa-edit" ></i></a>
+                                                <a class="btn btn-primary btn-sm" href="{{ url('admin/about-us/edit', $data->id) }}"><i class="fa fa-edit" ></i></a>
                                                 <a data-toggle="modal" data-target="#delete{{ $data->id }}" class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i></a>
                                             </td>
-                                            {{-- @include('backend/sliders/modals/deleteAbout') --}}
+                                            {{-- @include('backend/AboutUs/modals/deleteAbout') --}}
                                         </tr>
                                     @endforeach
                             </tbody>
@@ -106,7 +106,7 @@
             </div>
         </div>
     </div>
-    {{-- @include('backend/Home/sliders/modals/addSliders') --}}
+    {{-- @include('backend/Home/AboutUs/modals/addAboutUs') --}}
 
 
     @section('about_script')

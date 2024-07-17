@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\Aboutus\AboutUsController;
 use App\Http\Controllers\Backend\Aboutus\TeamController;
 use App\Http\Controllers\Backend\Home\SlidersController;
 use App\Http\Controllers\Backend\Home\TestimonialsController;
@@ -58,6 +59,14 @@ Route::middleware(['auth'])->group(function ()
         Route::get('testimonials/edit/{id}', [TestimonialsController::class, 'edit']);
         Route::post('testimonials/edit/{id}', [TestimonialsController::class, 'update']);
         Route::get('testimonials/delete/{id}', [TestimonialsController::class, 'delete']);
+
+        // Aboutus Route
+        Route::get('about-us', [AboutUsController::class, 'index']);
+        Route::get('about-us/create', [AboutUsController::class, 'create']);
+        Route::post('about-us/create', [AboutUsController::class, 'store']);
+        Route::get('about-us/edit/{id}', [AboutUsController::class, 'edit']);
+        Route::post('about-us/edit/{id}', [AboutUsController::class, 'update']);
+        Route::get('about-us/delete/{id}', [AboutUsController::class, 'delete']);
 
         // Team Route
         Route::get('team', [TeamController::class, 'index']);
