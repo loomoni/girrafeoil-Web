@@ -14,8 +14,14 @@ class SlidersController extends Controller
         return view('backend.home.sliders.sliders', compact('data'));
     }
 
+    // Call create view form
+    public function create()
+    {
+        return view('backend.home.sliders.create');
+    }
+
     //Adding Slider data to database Function
-    public function addsliders(Request $request)
+    public function store(Request $request)
     {
         $data = new Sliders;
 

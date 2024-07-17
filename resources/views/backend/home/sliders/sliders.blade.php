@@ -9,9 +9,9 @@
 @section('content')
 
 <div class="row wrapper border-bottom white-bg page-heading" >
-    <div class="col-lg-10">
+    <div class="col-lg-10 py-2">
        
-        <h2>Sliders</h2>
+        <h2></h2>
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
                 <a href="/">Home</a>
@@ -21,8 +21,11 @@
             </li>
         </ol>
     </div>
-    <div class="col-lg-2">
-
+    <div class="col-lg-2 py-2">
+        {{-- <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item">Home</li>
+            <li class="breadcrumb-item active"><a href="#">Slider</a></li>
+        </ul> --}}
     </div>
 </div>
     @include('backend/layouts/error-success')
@@ -33,7 +36,7 @@
                     <div>
                         <div class="row">
                             <div class="col-md-2">
-                                <a data-toggle="modal" href="#" data-target="#addslider" class="btn btn-primary w-100">Add New</a>
+                                <a  href="{{ url('admin-home/sliders/create') }}"  class="btn btn-primary w-100">Add New</a>
                             </div>
                         </div>
                     </div>

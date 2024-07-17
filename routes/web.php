@@ -43,7 +43,8 @@ Route::middleware(['auth'])->group(function ()
 
         //Sliders
         Route::get('sliders', [SlidersController::class, 'index']);
-        Route::post('add_sliders', [SlidersController::class, 'addsliders']);
+        Route::get('sliders/create', [SlidersController::class, 'create']);
+        Route::post('sliders/create', [SlidersController::class, 'store']);
         Route::put('edit_sliders/{id}', [SlidersController::class, 'editsliders']);
         Route::get('delete_sliders/{id}', [SlidersController::class, 'deletesliders']);
 
