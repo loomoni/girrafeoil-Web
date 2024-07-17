@@ -25,23 +25,24 @@ class TestimonialsController extends Controller
     {
         $data = new Testimonials;
 
-        if($request->hasFile('file')){
-            $file = $request->file;
+        if($request->hasFile('image')){
+            $image = $request->image;
  
-            $imagename=time().'.'.$file->getClientOriginalExtension();
+            $imagename=time().'.'.$image->getClientOriginalExtension();
      
-            $request->file->move('backend/img/TestimonialsImages',$imagename);
+            $request->image->move('backend/img/TestimonialsImages',$imagename);
      
-            $data->file=$imagename;
+            $data->image=$imagename;
     
-            $file = $request->file;
+            $image = $request->image;
         }
+        $data->name=$request->name;
         $data->title=$request->title;
         $data->description=$request->description;
 
         $data->save();
 
-        return redirect()->back()->with("message", "Slider Added Successfully");
+        return redirect()->back()->with("message", "Testimonial Added Successfully");
     }
 
     // Edit view
