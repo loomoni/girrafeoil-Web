@@ -52,7 +52,7 @@ class TestimonialsController extends Controller
 
         
         if (!$data) {
-            return redirect('admin-home/testimonials')->with('error', 'Testimonial member not found');
+            return redirect('admin/testimonials')->with('error', 'Testimonial member not found');
         }
 
         return view('backend.home.testimonials.edit', compact('data'));
@@ -65,7 +65,7 @@ class TestimonialsController extends Controller
         $data = Testimonials::find($id);
 
         if (!$data) {
-            return redirect('admin-home/testimonials')->with('error', 'Testimonial member not found');
+            return redirect('admin/testimonials')->with('error', 'Testimonial member not found');
         }
     
         // Handle image update
@@ -96,10 +96,10 @@ class TestimonialsController extends Controller
         try {
             // Save the updated data
             $data->save();
-            return redirect('admin-home/testimonials')->with('message', 'Testimonials updated successfully');
+            return redirect('admin/testimonials')->with('message', 'Testimonials updated successfully');
         } catch (\Exception $e) {
             // Log the error or handle it as needed
-            return redirect('admin-home/testimonials')->with('error', 'Error updating a Testimonials');
+            return redirect('admin/testimonials')->with('error', 'Error updating a Testimonials');
         }
 
     }

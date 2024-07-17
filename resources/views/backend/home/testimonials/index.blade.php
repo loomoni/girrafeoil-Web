@@ -36,7 +36,7 @@
                     <div>
                         <div class="row">
                             <div class="col-md-2">
-                                <a  href="{{ url('admin-home/testimonials/create') }}"  class="btn btn-primary w-100">Add New</a>
+                                <a  href="{{ url('admin/testimonials/create') }}"  class="btn btn-primary w-100">Add New</a>
                             </div>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                                             <td>{{ $data->description }}</td>
                                             <td><img height="50" width="50" src="/backend/img/TestimonialsImages/{{ $data->image }}"></td>
                                             <td style="width: 11%">
-                                                <a class="btn btn-primary btn-sm" href="{{ url('admin-home/testimonials/edit', $data->id) }}"><i class="fa fa-edit" ></i></a>
+                                                <a class="btn btn-primary btn-sm" href="{{ url('admin/testimonials/edit', $data->id) }}"><i class="fa fa-edit" ></i></a>
                                                 <a data-toggle="modal" data-target="#delete{{ $data->id }}" class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i></a>
                                             </td>
                                             {{-- @include('backend/testimonials/modals/deleteAbout') --}}

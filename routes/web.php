@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\Aboutus\TeamController;
 use App\Http\Controllers\Backend\Home\SlidersController;
 use App\Http\Controllers\Backend\Home\TestimonialsController;
 use App\Http\Controllers\Frontend\Home\HomeController;
@@ -40,7 +41,7 @@ Route::middleware([
 Route::middleware(['auth'])->group(function ()
 {
 
-    Route::prefix('admin-home')->group(function () {
+    Route::prefix('admin')->group(function () {
 
         //Sliders
         Route::get('sliders', [SlidersController::class, 'index']);
@@ -57,6 +58,14 @@ Route::middleware(['auth'])->group(function ()
         Route::get('testimonials/edit/{id}', [TestimonialsController::class, 'edit']);
         Route::post('testimonials/edit/{id}', [TestimonialsController::class, 'update']);
         Route::get('testimonials/delete/{id}', [TestimonialsController::class, 'delete']);
+
+        // Team Route
+        Route::get('team', [TeamController::class, 'index']);
+        Route::get('team/create', [TeamController::class, 'create']);
+        Route::post('team/create', [TeamController::class, 'store']);
+        Route::get('team/edit/{id}', [TeamController::class, 'edit']);
+        Route::post('team/edit/{id}', [TeamController::class, 'update']);
+        Route::get('team/delete/{id}', [TeamController::class, 'delete']);
 
     });
 });

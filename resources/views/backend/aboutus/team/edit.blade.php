@@ -5,12 +5,12 @@
 <main class="app-content">
     <div class="app-title">
         <div>
-            <h1><i class="fa fa-edit"></i>Edit Testimonials</h1>
+            <h1><i class="fa fa-edit"></i>Edit Member</h1>
         </div>
         <ul class="app-breadcrumb breadcrumb">
             <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-            <li class="breadcrumb-item">Testimonials</li>
-            <li class="breadcrumb-item"><a href="#">Edit Testimonials</a></li>
+            <li class="breadcrumb-item">Team</li>
+            <li class="breadcrumb-item"><a href="#">Edit Member</a></li>
         </ul>
     </div>
 
@@ -21,14 +21,14 @@
     @endif
 
     <div>
-        <a class="btn btn-primary back-btn" href="{{ url('admin-home/testimonials') }}"><i class="fa-solid fa-reply-all"></i>   Back</a>
+        <a class="btn btn-primary back-btn" href="{{ url('admin/Team') }}"><i class="fa-solid fa-reply-all"></i>   Back</a>
     </div>
     <div class="row mt-2">
 
         <div class="clearix"></div>
         <div class="col-md-12">
             <div class="tile">
-                <h3 class="tile-title">Edit New Testimonials</h3>
+                <h3 class="tile-title">Edit New Team</h3>
                 <div class="tile-body">
                     <form method="POST" action=""  enctype="multipart/form-data">
                         @csrf

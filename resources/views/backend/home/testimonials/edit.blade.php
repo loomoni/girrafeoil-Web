@@ -21,7 +21,7 @@
     @endif
 
     <div>
-        <a class="btn btn-primary back-btn" href="{{ url('admin-home/testimonials') }}"><i class="fa-solid fa-reply-all"></i>   Back</a>
+        <a class="btn btn-primary back-btn" href="{{ url('admin/testimonials') }}"><i class="fa-solid fa-reply-all"></i>   Back</a>
     </div>
     <div class="row mt-2">
 
