@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\Aboutus\AboutUsController;
 use App\Http\Controllers\Backend\Aboutus\TeamController;
 use App\Http\Controllers\Backend\Home\SlidersController;
 use App\Http\Controllers\Backend\Home\TestimonialsController;
+use App\Http\Controllers\Backend\News\NewsController;
 use App\Http\Controllers\Backend\Services\ServicesLocationController;
 use App\Http\Controllers\Frontend\Home\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -84,6 +85,14 @@ Route::middleware(['auth'])->group(function ()
         Route::get('services-location/edit/{id}', [ServicesLocationController::class, 'edit']);
         Route::post('services-location/edit/{id}', [ServicesLocationController::class, 'update']);
         Route::get('services-location/delete/{id}', [ServicesLocationController::class, 'delete']);
+
+        // News Route
+        Route::get('news', [NewsController::class, 'index']);
+        Route::get('news/create', [NewsController::class, 'create']);
+        Route::post('news/create', [NewsController::class, 'store']);
+        Route::get('news/edit/{id}', [NewsController::class, 'edit']);
+        Route::post('news/edit/{id}', [NewsController::class, 'update']);
+        Route::get('news/delete/{id}', [NewsController::class, 'delete']);
 
     });
 });

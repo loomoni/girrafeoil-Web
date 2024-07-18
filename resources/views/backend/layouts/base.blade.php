@@ -35,6 +35,10 @@
         <link href="{{ url('backend/css/plugins/dataTables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
         <link href="{{ url('backend/css/plugins/dataTables/responsive.bootstrap4.min.css') }}" rel="stylesheet">
 
+            <!--Text Editor Summernote import CSS Link -->
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+
         <!-- Add your additional styles within the each module if you have -->
         @yield('sample_styles')
        
@@ -179,6 +183,21 @@
 
         <!-- Add your additional styles within the each module if you have -->
         @yield('sample_script')
+
+          <!--Summernote Js Link-->
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+
+  <script>
+      $(document).ready(function() {
+          $(".summernotecontents").summernote({
+              tabsize: 2,
+              height: 190
+          });
+          $('.dropdown-toggle').dropdown();
+      
+      });
+  </script>
        
       
     </body>
