@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\Aboutus\AboutUsController;
 use App\Http\Controllers\Backend\Aboutus\TeamController;
+use App\Http\Controllers\Backend\Contact\ContactController;
 use App\Http\Controllers\Backend\Home\SlidersController;
 use App\Http\Controllers\Backend\Home\TestimonialsController;
 use App\Http\Controllers\Backend\News\NewsController;
@@ -93,6 +94,14 @@ Route::middleware(['auth'])->group(function ()
         Route::get('news/edit/{id}', [NewsController::class, 'edit']);
         Route::post('news/edit/{id}', [NewsController::class, 'update']);
         Route::get('news/delete/{id}', [NewsController::class, 'delete']);
+
+        // Contact Route
+        Route::get('contact', [ContactController::class, 'index']);
+        Route::get('contact/create', [ContactController::class, 'create']);
+        Route::post('contact/create', [ContactController::class, 'store']);
+        Route::get('contact/edit/{id}', [ContactController::class, 'edit']);
+        Route::post('contact/edit/{id}', [ContactController::class, 'update']);
+        Route::get('contact/delete/{id}', [ContactController::class, 'delete']);
 
     });
 });

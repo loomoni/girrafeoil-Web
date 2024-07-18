@@ -43,7 +43,7 @@
             </li>
 
             <li id="dashboard">
-                <a href="{{ url('dashboard') }}"><i class="fa-regular fa-address-book"></i> <span class="nav-label">Contacts</span> </a>
+                <a href="{{ url('admin/contact') }}"><i class="fa-regular fa-address-book"></i> <span class="nav-label">Contacts</span> </a>
             </li>
            
         </ul>
