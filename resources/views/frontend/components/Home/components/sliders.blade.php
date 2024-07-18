@@ -3,9 +3,9 @@
     <div class="info d-flex align-items-center">
       <div class="container">
         <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-6 text-center">
+          <div class="col-lg-6 text-center" style="width: 50rem;">
             <h2>Welcome to Giraffe Oil</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Fueling your dreams</p>
             <a href="#get-started" class="btn-get-started">About Us</a>
           </div>
         </div>
@@ -14,25 +14,11 @@
 
     <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
 
-      <div class="carousel-item">
-        <img src="{{ url('frontend/assets/img/hero-carousel/hero-carousel-1.jpg') }}" alt="">
-      </div>
-
-      <div class="carousel-item active">
-        <img src="{{ url('frontend/assets/img/hero-carousel/hero-carousel-2.jpg') }}" alt="">
-      </div>
-
-      <div class="carousel-item">
-        <img src="{{ url('frontend/assets/img/hero-carousel/hero-carousel-3.jpg') }}" alt="">
-      </div>
-
-      <div class="carousel-item">
-        <img src="{{ url('frontend/assets/img/hero-carousel/hero-carousel-1.jpg') }}" alt="">
-      </div>
-
-      <div class="carousel-item">
-        <img src="{{ url('frontend/assets/img/hero-carousel/hero-carousel-2.jpg') }}" alt="">
-      </div>
+      @foreach ($sliders as $item)
+        <div class="carousel-item @if ($loop->index == 0) active @endif">
+          <img src="{{ url('/backend/img/slidersImages', $item->file)}}" alt="">
+        </div>
+      @endforeach
 
       <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>

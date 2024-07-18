@@ -3,13 +3,16 @@
 namespace App\Http\Controllers\Frontend\Home;
 
 use App\Http\Controllers\Controller;
+use App\Models\contact;
+use App\Models\Sliders;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('frontend.components.Home.home');
+        $sliders = Sliders::all();
+        return view('frontend.components.Home.home', compact('sliders'));
     }
 
     public function aboutUs()
@@ -34,6 +37,7 @@ class HomeController extends Controller
 
     public function contactUs()
     {
-        return view('frontend.components.Contact.contactUs');
+        $contact = contact::all()->first();
+        return view('frontend.components.Contact.contactUs', compact('contact'));
     }
 }
