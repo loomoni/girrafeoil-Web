@@ -29,6 +29,22 @@
                     <li><a href="{{ url('admin/team')}}" id="managestfpos">Team</a></li>
                 </ul>
             </li>
+
+            <li id="dropdown">
+                <a href="#"><i class="fa-solid fa-list-check"></i>  <span class="nav-label">Services</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a href="{{ url('admin/services-location') }}" id="managestf">Services Location</a></li>
+                    <li><a href="{{ url('admin/team')}}" id="managestfpos">Services</a></li>
+                </ul>
+            </li>
+
+            <li id="dashboard">
+                <a href="{{ url('dashboard') }}"><i class="fa fa-th-large"></i> <span class="nav-label">News</span> </a>
+            </li>
+
+            <li id="dashboard">
+                <a href="{{ url('dashboard') }}"><i class="fa fa-th-large"></i> <span class="nav-label">Contacts</span> </a>
+            </li>
            
         </ul>
 

@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\Aboutus\AboutUsController;
 use App\Http\Controllers\Backend\Aboutus\TeamController;
 use App\Http\Controllers\Backend\Home\SlidersController;
 use App\Http\Controllers\Backend\Home\TestimonialsController;
+use App\Http\Controllers\Backend\Services\ServicesLocationController;
 use App\Http\Controllers\Frontend\Home\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -75,6 +76,14 @@ Route::middleware(['auth'])->group(function ()
         Route::get('team/edit/{id}', [TeamController::class, 'edit']);
         Route::post('team/edit/{id}', [TeamController::class, 'update']);
         Route::get('team/delete/{id}', [TeamController::class, 'delete']);
+
+        // Services Location Route
+        Route::get('services-location', [ServicesLocationController::class, 'index']);
+        Route::get('services-location/create', [ServicesLocationController::class, 'create']);
+        Route::post('services-location/create', [ServicesLocationController::class, 'store']);
+        Route::get('services-location/edit/{id}', [ServicesLocationController::class, 'edit']);
+        Route::post('services-location/edit/{id}', [ServicesLocationController::class, 'update']);
+        Route::get('services-location/delete/{id}', [ServicesLocationController::class, 'delete']);
 
     });
 });
