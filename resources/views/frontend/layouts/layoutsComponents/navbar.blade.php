@@ -3,8 +3,8 @@
 
       <a href="{{ url('/') }}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Giraffe</h1> <span>.</span>
+        {{-- <img src="{{ url('frontend/assets/img/logo.png') }}" height="100%" width="100%" alt="">  --}}
+        <h1 class="sitename">Giraffe Oil Company</h1> <span>.</span>
       </a>
 
       <nav id="navmenu" class="navmenu">
