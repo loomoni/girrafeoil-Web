@@ -5,12 +5,12 @@
 <main class="app-content">
     <div class="app-title">
         <div>
-            <h1><i class="fa fa-edit"></i>Add About us</h1>
+            <h1><i class="fa fa-edit"></i>Add Location</h1>
         </div>
         <ul class="app-breadcrumb breadcrumb">
             <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-            <li class="breadcrumb-item">About Us</li>
-            <li class="breadcrumb-item"><a href="#">Add About Us</a></li>
+            <li class="breadcrumb-item">Location</li>
+            <li class="breadcrumb-item"><a href="#">Add Location</a></li>
         </ul>
     </div>
 
@@ -21,7 +21,7 @@
     @endif
 
     <div>
-        <a class="btn btn-primary back-btn" href="{{ url('admin/about-us') }}"><i class="fa-solid fa-reply-all"></i>   Back</a>
+        <a class="btn btn-primary back-btn" href="{{ url('admin/services-location') }}"><i class="fa-solid fa-reply-all"></i>   Back</a>
     </div>
     <div class="row mt-2">
 
@@ -34,34 +34,15 @@
                         @csrf
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label class="control-label">Title</label>
-                                <input name="title" class="form-control @error('title') is-invalid @enderror" type="text" placeholder="Enter Title">
-                                @error('title')
+                                <label class="control-label">Location Name</label>
+                                <input name="name" class="form-control @error('name') is-invalid @enderror" type="text" placeholder="Enter name">
+                                @error('name')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-group col-md-6">
-                                <label class="control-label">Description</label>
-                                <input name="description" class="form-control @error('description') is-invalid @enderror" type="text" placeholder="Enter Description">
-                                @error('description')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label class="control-label">Video Link</label>
-                                <input name="link" class="form-control @error('link') is-invalid @enderror" type="text" placeholder="YouTube Link">
-                                @error('link')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+
                             <div class="form-group col-md-6">
                                 <label class="control-label">Image</label>
                                 <input style="height: 39px" name="image" class="form-control @error('image') is-invalid @enderror" type="file">
@@ -71,6 +52,20 @@
                                     </span>
                                 @enderror
                             </div>
+                            
+                        </div>
+                        <div class="form-row">
+                           
+                            <div class="form-group col-md-12">
+                                <label class="control-label">Description</label>
+                                <textarea name="description" id="description" class="summernotecontents"></textarea>
+                                @error('description')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-4 align-self-end">

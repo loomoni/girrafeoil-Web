@@ -10,46 +10,48 @@
 
       <div class="row gy-4">
 
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="services-img">
-            <img src="{{ url('frontend/assets/img/services/service1.jpg') }}" class="img-fluid" style="width: 100%" alt="">
-          </div>
+        @foreach ($services as $item)
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="services-img">
+              <img src="{{ url('/backend/img/ServicesLocationImages/', $item->image) }}" class="img-fluid" style="width: 100%" alt="">
+            </div>
 
-          <div class="service-item  position-relative">
-            <h3>Goba</h3>
-            <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
-            <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+            <div class="service-item  position-relative">
+              <h3>{{ $item->name }}</h3>
+              {{-- {!! $item->description !!} --}}
+              <div class="short-description">
+                {!! \Illuminate\Support\Str::limit(strip_tags($item->description), 200, '...') !!}
+              </div>
+              <div class="full-description" style="display: none;">
+                {!! $item->description !!}
+              </div>
+              {{-- {!! \Illuminate\Support\Str::limit($item->description, 400, '...') !!} --}}
+              {{-- <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a> --}}
+              <a href="javascript:void(0);" class="readmore stretched-link" onclick="toggleDescription(this)">Read more <i class="bi bi-arrow-right"></i></a>
+            </div>
           </div>
-        </div>
+        @endforeach
         <!-- End Service Item -->
-
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-          <div class="services-img">
-            <img src="{{ url('frontend/assets/img/services/service2.jpg') }}" class="img-fluid" style="width: 100%" alt="">
-          </div>
-          <div class="service-item position-relative">
-          
-            <h3>Mbezi</h3>
-            <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-            <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div><!-- End Service Item -->
-
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-          <div class="services-img">
-            <img src="{{ url('frontend/assets/img/services/service3.jpg') }}" class="img-fluid" style="width: 100%" alt="">
-          </div>
-          <div class="service-item position-relative">
-           
-            <h3>Ubungo</h3>
-            <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
-            <a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div><!-- End Service Item -->
-
-
       </div>
 
     </div>
+
+    <script>
+      function toggleDescription(element) {
+        const shortDescription = element.parentElement.querySelector('.short-description');
+        const fullDescription = element.parentElement.querySelector('.full-description');
+        
+        if (fullDescription.style.display === 'none') {
+          fullDescription.style.display = 'block';
+          shortDescription.style.display = 'none';
+          element.innerHTML = 'Read less <i class="bi bi-arrow-up"></i>';
+        } else {
+          fullDescription.style.display = 'none';
+          shortDescription.style.display = 'block';
+          element.innerHTML = 'Read more <i class="bi bi-arrow-right"></i>';
+        }
+      }
+    </script>
+    
 
   </section>

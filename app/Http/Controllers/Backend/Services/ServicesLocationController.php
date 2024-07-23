@@ -18,7 +18,8 @@ class ServicesLocationController extends Controller
     // Call create view form
     public function create()
     {
-        return view('backend.services.services.create');
+
+        return view('backend.services.servicesLocation.create');
     }
 
     //Adding Slider data to database Function
@@ -55,7 +56,8 @@ class ServicesLocationController extends Controller
             return redirect('admin/ServicesLocation')->with('error', 'Location not found');
         }
 
-        return view('backend.services.services.edit', compact('data'));
+
+        return view('backend.services.servicesLocation.edit', compact('data'));
 
     }
 

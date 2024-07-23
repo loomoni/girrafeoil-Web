@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend\Home;
 use App\Http\Controllers\Controller;
 use App\Models\AboutUs;
 use App\Models\contact;
+use App\Models\ServicesLocation;
 use App\Models\Sliders;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class HomeController extends Controller
     {
         $sliders = Sliders::all();
         $aboutUs = AboutUs::all()->first();
-        return view('frontend.components.Home.home', compact('sliders', 'aboutUs'));
+        $services = ServicesLocation::all();
+        return view('frontend.components.Home.home', compact('sliders', 'aboutUs', 'services'));
     }
 
     public function aboutUs()
