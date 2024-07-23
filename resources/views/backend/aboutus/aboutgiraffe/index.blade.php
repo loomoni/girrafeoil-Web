@@ -90,7 +90,7 @@
                                         <tr>
                                             <td>{{ $count }} </td>
                                             <td>{{ $data->title }}</td>
-                                            <td>{{ $data->description }}</td>
+                                            <td>{!! str_limit(html_entity_decode(strip_tags($data->description)), 190, '...') !!}</td>
                                             <td><img height="100" width="100" src="/backend/img/AboutUsImages/{{ $data->image }}"></td>
                                             <td style="width: 11%">
                                                 <a class="btn btn-primary btn-sm" href="{{ url('admin/about-us/edit', $data->id) }}"><i class="fa fa-edit" ></i></a>

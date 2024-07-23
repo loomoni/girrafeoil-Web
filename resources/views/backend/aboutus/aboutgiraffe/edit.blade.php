@@ -21,7 +21,7 @@
     @endif
 
     <div>
-        <a class="btn btn-primary back-btn" href="{{ url('admin/sliders') }}"><i class="fa-solid fa-reply-all"></i>   Back</a>
+        <a class="btn btn-primary back-btn" href="{{ url('admin/about-us') }}"><i class="fa-solid fa-reply-all"></i>   Back</a>
     </div>
     <div class="row mt-2">
 
@@ -43,17 +43,6 @@
                                 @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label class="control-label">Description</label>
-                                <input name="description" class="form-control @error('description') is-invalid @enderror" type="text" value="{{$data->description}}">
-                                @error('description')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
                                 <label class="control-label">Link</label>
                                 <input name="link" class="form-control @error('link') is-invalid @enderror" type="text" value="{{$data->link}}">
                                 @error('link')
@@ -62,7 +51,21 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-group col-md-6">
+                          
+                        </div>
+                        <div class="form-row"> 
+                            <div class="form-group col-md-12">
+                            <label class="control-label">Description</label>
+                            <textarea type="text" name="description" class="summernotecontents">{{ $data->description }}</textarea>
+                            @error('description')
+                            <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
                                 <label class="control-label">Background Image</label>
                                 <input name="file" class="form-control @error('file') is-invalid @enderror" type="file">
                                 @error('file')

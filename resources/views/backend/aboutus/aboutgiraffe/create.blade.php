@@ -42,17 +42,7 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-group col-md-6">
-                                <label class="control-label">Description</label>
-                                <input name="description" class="form-control @error('description') is-invalid @enderror" type="text" placeholder="Enter Description">
-                                @error('description')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="form-row">
+
                             <div class="form-group col-md-6">
                                 <label class="control-label">Video Link</label>
                                 <input name="link" class="form-control @error('link') is-invalid @enderror" type="text" placeholder="YouTube Link">
@@ -62,7 +52,22 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-group col-md-6">
+                           
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label class="control-label">Description</label>
+                                <textarea type="text" name="description" class="summernotecontents"></textarea>
+                                @error('description')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
                                 <label class="control-label">Image</label>
                                 <input style="height: 39px" name="image" class="form-control @error('image') is-invalid @enderror" type="file">
                                 @error('image')

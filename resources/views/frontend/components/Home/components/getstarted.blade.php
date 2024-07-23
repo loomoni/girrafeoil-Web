@@ -7,13 +7,7 @@
         <div class="col-lg-6 d-flex align-items" data-aos="zoom-out" data-aos-delay="100">
           <div class="content">
             <h3>About us.</h3>
-            <p>Rem id rerum. Debitis deserunt quidem delectus expedita ducimus dolor. Aut iusto ipsa. Eos ipsum nobis ipsa soluta itaque perspiciatis fuga ipsum perspiciatis. Eum amet fugiat totam nisi possimus ut delectus dicta.
-            </p>
-            <p>Aliquam velit deserunt autem. Inventore et saepe. Tenetur suscipit eligendi labore culpa eos. Deserunt porro magni qui necessitatibus dolorem at animi cupiditate.</p>
-
-            <p>Rem id rerum. Debitis deserunt quidem delectus expedita ducimus dolor. Aut iusto ipsa. Eos ipsum nobis ipsa soluta itaque perspiciatis fuga ipsum perspiciatis. Eum amet fugiat totam nisi possimus ut delectus dicta.
-            </p>
-            <p>Aliquam velit deserunt autem. Inventore et saepe. Tenetur suscipit eligendi labore culpa eos. Deserunt porro magni qui necessitatibus dolorem at animi cupiditate.</p>
+            {!! $aboutUs->description !!}
           </div>
           
         </div>
@@ -21,7 +15,7 @@
         <div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
           <form action="forms/quote.php" method="post" class="php-email-form">
             <h3>Get a quote</h3>
-            <p>Vel nobis odio laboriosam et hic voluptatem. Inventore vitae totam. Rerum repellendus enim linead sero park flows.</p>
+            <p>Need a customized solution for your fuel and lubricant needs? Fill out our quick and easy form to receive a tailored quote. Our team will get back to you promptly with competitive pricing and exceptional service.</p>
             <div class="row gy-3">
 
               <div class="col-12">
