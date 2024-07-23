@@ -52,7 +52,7 @@ Route::middleware(['auth'])->group(function ()
         Route::get('sliders/create', [SlidersController::class, 'create']);
         Route::post('sliders/create', [SlidersController::class, 'store']);
         Route::get('sliders/edit/{id}', [SlidersController::class, 'edit']);
-        Route::put('sliders/edit/{id}', [SlidersController::class, 'update']);
+        Route::post('sliders/edit/{id}', [SlidersController::class, 'update']);
         Route::get('sliders/delete/{id}', [SlidersController::class, 'delete']);
 
         // Testimonials Route
