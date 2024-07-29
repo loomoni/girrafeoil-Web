@@ -1,9 +1,12 @@
+
+@if (!is_null($testimonials) && $testimonials->isNotEmpty())
 <section id="testimonials" class="testimonials section">
-  
+
+
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
       <h2>Testimonials</h2>
-      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      <p>What Our Clients Say</p>
     </div><!-- End Section Title -->
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -36,8 +39,8 @@
         </script>
         <div class="swiper-wrapper">
 
-          @foreach ($tesimonials as $item)
-
+          @foreach ($testimonials as $item)
+          
           <div class="swiper-slide">
             <div class="testimonial-wrap">
               <div class="testimonial-item">
@@ -65,3 +68,4 @@
     </div>
 
   </section>
+  @endif

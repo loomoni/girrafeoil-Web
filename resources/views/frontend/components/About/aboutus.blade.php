@@ -23,25 +23,17 @@
 
             <div class="row position-relative">
 
-            <div class="col-lg-7 about-img" data-aos="zoom-out" data-aos-delay="200"><img src="{{ url('frontend/assets/img/about.jpg') }}"></div>
+            <div class="col-lg-7 about-img" data-aos="zoom-out" data-aos-delay="200"><img src="{{ url('/backend/img/AboutUsImages/',  $aboutUs->image) }}"></div>
 
                 <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
                     <h2 class="inner-title">About Us</h2>
                     <div class="our-story">
-                    <h4>Est 1988</h4>
-                    <h3>Our Story</h3>
-                    <p>Inventore aliquam beatae at et id alias. Ipsa dolores amet consequuntur minima quia maxime autem. Quidem id sed ratione. Tenetur provident autem in reiciendis rerum at dolor. Aliquam consectetur laudantium temporibus dicta minus dolor.</p>
-                    <ul>
-                        <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commo</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Duis aute irure dolor in reprehenderit in</span></li>
-                        <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea</span></li>
-                    </ul>
-                    <p>Vitae autem velit excepturi fugit. Animi ad non. Eligendi et non nesciunt suscipit repellendus porro in quo eveniet. Molestias in maxime doloremque.</p>
+                    {!! $aboutUs->description !!}
 
-                    <div class="watch-video d-flex align-items-center position-relative">
+                    {{-- <div class="watch-video d-flex align-items-center position-relative">
                         <i class="bi bi-play-circle"></i>
                         <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox stretched-link">Watch Video</a>
-                    </div>
+                    </div> --}}
                     </div>
                 </div>
 
@@ -54,7 +46,7 @@
 
 
         <!-- Alt Services 2 Section -->
-    <section id="alt-services-2" class="alt-services-2 section">
+    {{-- <section id="alt-services-2" class="alt-services-2 section">
         <div class="container">
             <div class="row justify-content-around gy-4">
 
@@ -107,11 +99,13 @@
 
         </div>
 
-    </section>
+    </section> --}}
     <!-- /Alt Services 2 Section -->
 
+@if (!is_null($Team) && $Team->isNotEmpty())
+
         <!-- Team Section -->
-        <section id="team" class="team section">
+    <section id="team" class="team section">
 
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
@@ -123,115 +117,35 @@
 
             <div class="row gy-5">
 
-            <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
-                <div class="member-img">
-                <img src="{{ url('frontend/assets/img/team/team-1.jpg') }}" class="img-fluid" alt="">
-                <div class="social">
-                    <a href="#"><i class="bi bi-twitter-x"></i></a>
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
+            @foreach ($Team as $data)
+                <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+                    <div class="member-img">
+                    <img src="{{ url('frontend/assets/img/team/team-1.jpg') }}" class="img-fluid" alt="">
+                    <div class="social">
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    </div>
+                    <div class="member-info text-center">
+                    <h4>{{ $data->name }}</h4>
+                    <span>{{ $data->position }}</span>
+                    <p>{{ $data->description }}</p>
+                    </div>
                 </div>
-                </div>
-                <div class="member-info text-center">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-                <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum distinctio dire flow</p>
-                </div>
-            </div><!-- End Team Member -->
-
-            <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
-                <div class="member-img">
-                <img src="{{ url('frontend/assets/img/team/team-2.jpg') }}" class="img-fluid" alt="">
-                <div class="social">
-                    <a href="#"><i class="bi bi-twitter-x"></i></a>
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                </div>
-                </div>
-                <div class="member-info text-center">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-                <p>Labore ipsam sit consequatur exercitationem rerum laboriosam laudantium aut quod dolores exercitationem ut</p>
-                </div>
-            </div><!-- End Team Member -->
-
-            <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
-                <div class="member-img">
-                <img src="{{ url('frontend/assets/img/team/team-3.jpg') }}" class="img-fluid" alt="">
-                <div class="social">
-                    <a href="#"><i class="bi bi-twitter-x"></i></a>
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                </div>
-                </div>
-                <div class="member-info text-center">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-                <p>Illum minima ea autem doloremque ipsum quidem quas aspernatur modi ut praesentium vel tque sed facilis at qui</p>
-                </div>
-            </div><!-- End Team Member -->
-
-            <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="400">
-                <div class="member-img">
-                <img src="{{ url('frontend/assets/img/team/team-4.jpg') }}" class="img-fluid" alt="">
-                <div class="social">
-                    <a href="#"><i class="bi bi-twitter-x"></i></a>
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                </div>
-                </div>
-                <div class="member-info text-center">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-                <p>Magni voluptatem accusamus assumenda cum nisi aut qui dolorem voluptate sed et veniam quasi quam consectetur</p>
-                </div>
-            </div><!-- End Team Member -->
-
-            <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="500">
-                <div class="member-img">
-                <img src="{{ url('frontend/assets/img/team/team-5.jpg') }}" class="img-fluid" alt="">
-                <div class="social">
-                    <a href="#"><i class="bi bi-twitter-x"></i></a>
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                </div>
-                </div>
-                <div class="member-info text-center">
-                <h4>Brian Doe</h4>
-                <span>Marketing</span>
-                <p>Qui consequuntur quos accusamus magnam quo est molestiae eius laboriosam sunt doloribus quia impedit laborum velit</p>
-                </div>
-            </div><!-- End Team Member -->
-
-            <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="600">
-                <div class="member-img">
-                <img src="{{ url('frontend/assets/img/team/team-6.jpg') }}" class="img-fluid" alt="">
-                <div class="social">
-                    <a href="#"><i class="bi bi-twitter-x"></i></a>
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
-                </div>
-                </div>
-                <div class="member-info text-center">
-                <h4>Josepha Palas</h4>
-                <span>Operation</span>
-                <p>Sint sint eveniet explicabo amet consequatur nesciunt error enim rerum earum et omnis fugit eligendi cupiditate vel</p>
-                </div>
-            </div><!-- End Team Member -->
+            @endforeach
+            <!-- End Team Member -->
 
             </div>
 
         </div>
+    </section><!-- /Team Section -->
+@endif
 
-        </section><!-- /Team Section -->
+ @if (!is_null($testimonials) && $testimonials->isNotEmpty())
 
-        <!-- Testimonials Section -->
+ <!-- Testimonials Section -->
         <section id="testimonials" class="testimonials section">
 
         <!-- Section Title -->
@@ -241,7 +155,6 @@
         </div><!-- End Section Title -->
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-
             <div class="swiper init-swiper">
             <script type="application/json" class="swiper-config">
                 {
@@ -269,7 +182,7 @@
                 }
             </script>
             <div class="swiper-wrapper">
-                @foreach ($tesimonials as $item)
+                @foreach ($testimonials as $item)
                   
                 <div class="swiper-slide">
                     <div class="testimonial-wrap">
@@ -290,9 +203,7 @@
                 </div>
                     
                 @endforeach
-
                 <!-- End testimonial item -->
-
 
             </div>
             <div class="swiper-pagination"></div>
@@ -301,5 +212,7 @@
         </div>
 
         </section><!-- /Testimonials Section -->
+
+@endif
     </main>
 @endsection

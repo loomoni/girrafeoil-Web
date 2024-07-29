@@ -96,7 +96,29 @@
                                                 <a class="btn btn-primary btn-sm" href="{{ url('admin/sliders/edit', $data->id) }}"><i class="fa fa-edit" ></i></a>
                                                 <a data-toggle="modal" data-target="#delete{{ $data->id }}" class="btn btn-danger btn-sm text-white"><i class="fa fa-trash"></i></a>
                                             </td>
-                                            {{-- @include('backend/sliders/modals/deleteAbout') --}}
+
+                                            {{-- Delete Modal --}}
+                                            <div class="modal fade" id="delete{{ $data->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <form action="">
+                                                        <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLongTitle">Delete</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <h5>Are you Sure you want to delete the record?</h5>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-danger">Yes Delete</button>
+                                                        </div>
+                                                </form>
+                                                </div>
+                                                </div>
+                                            </div>
                                         </tr>
                                     @endforeach
                             </tbody>

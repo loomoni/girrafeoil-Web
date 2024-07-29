@@ -108,7 +108,13 @@ class TestimonialsController extends Controller
     public function delete($id)
     {
         $data = Testimonials::find($id);
-        $data->delete();
+        if($data != null){
+            $data->delete();
+        }
+        else{
+            return redirect()->back()->with("message", "Testimonial not found");
+        }
+        
         return redirect()->back()->with("deletemessage", "Testimonial Contents Deleted Succesfully");
     }
 }

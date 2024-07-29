@@ -1,9 +1,10 @@
+
+@if (!is_null($currentNews) && $currentNews->isNotEmpty())
 <section id="recent-blog-posts" class="recent-blog-posts section">
-  
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
       <h2>Recent Blog Posts</h2>
-      <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      <p>See our recent news</p>
     </div><!-- End Section Title -->
 
     <div class="container">
@@ -51,3 +52,4 @@
     </div>
 
   </section>
+  @endif
