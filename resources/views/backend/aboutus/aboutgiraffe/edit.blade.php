@@ -67,8 +67,8 @@
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label class="control-label">Background Image</label>
-                                <input name="file" class="form-control @error('file') is-invalid @enderror" type="file">
-                                @error('file')
+                                <input name="image" class="form-control @error('image') is-invalid @enderror" type="file">
+                                @error('image')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
