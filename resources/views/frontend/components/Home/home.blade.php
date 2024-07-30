@@ -20,7 +20,7 @@
       <!-- /Services Section -->
   
       <!-- Alt Services Section -->
-       {{-- @include('frontend.components.Home.components.altServices') --}}
+       @include('frontend.components.Home.components.altServices')
       <!-- /Alt Services Section -->
   
       <!-- Features Section -->
