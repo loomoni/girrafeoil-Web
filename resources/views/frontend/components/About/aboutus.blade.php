@@ -46,7 +46,7 @@
 
 
         <!-- Alt Services 2 Section -->
-    {{-- <section id="alt-services-2" class="alt-services-2 section">
+    <section id="alt-services-2" class="alt-services-2 section">
         <div class="container">
             <div class="row justify-content-around gy-4">
 
@@ -56,41 +56,49 @@
 
             <div class="col-lg-5 d-flex flex-column justify-content-center order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
                 <h3>WHAT WE CAN OFFER</h3>
-                <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi</p>
+                <p>We offer variety of products include quality fuels, premium lubricants, efficient LPG, and reliable transportation services for all your needs.</p>
 
                 <div class="row">
 
                 <div class="col-lg-6 icon-box d-flex">
                     <i class="bi bi-easel flex-shrink-0"></i>
                     <div>
-                    <h4>DAPIBUS EGET</h4>
-                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias </p>
+                    <h4>DIESEL</h4>
+                    <p>Our diesel ensures optimal engine performance and longevity for trucks, machinery, and generators. Trust Giraffe Oil Company for clean, efficient, and reliable fuel.</p>
                     </div>
                 </div><!-- End Icon Box -->
 
                 <div class="col-lg-6 icon-box d-flex">
                     <i class="bi bi-patch-check flex-shrink-0"></i>
                     <div>
-                    <h4>CURSUS ELEIFEND</h4>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiise</p>
+                    <h4>PETROL</h4>
+                    <p>Experience superior engine performance and improved fuel economy with our premium petrol. Choose Giraffe Oil Company for a smooth and powerful drive.</p>
                     </div>
                 </div><!-- End Icon Box -->
 
                 <div class="col-lg-6 icon-box d-flex">
                     <i class="bi bi-brightness-high flex-shrink-0"></i>
                     <div>
-                    <h4>ERAT VOLUTPAT</h4>
-                    <p>Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit</p>
+                    <h4>LUBRICANTS</h4>
+                    <p>Our lubricants minimize friction, reduce wear, and extend equipment life. Perfect for automotive, industrial, and marine applications.</p>
                     </div>
                 </div><!-- End Icon Box -->
 
                 <div class="col-lg-6 icon-box d-flex">
                     <i class="bi bi-brightness-high flex-shrink-0"></i>
                     <div>
-                    <h4>PHASELLUS PORTA</h4>
-                    <p>Est voluptatem labore deleniti quis a delectus et. Saepe dolorem libero sit</p>
+                    <h4>LPG</h4>
+                    <p>Switch to our clean and efficient LPG for domestic, commercial, and industrial use. Enjoy lower emissions and cost-effective energy.</p>
                     </div>
                 </div><!-- End Icon Box -->
+{{-- 
+                <div class="col-lg-12 icon-box d-flex">
+                    <i class="bi bi-brightness-high flex-shrink-0"></i>
+                    <div>
+                    <h4>LPG</h4>
+                    <p>Switch to our clean and efficient LPG for domestic, commercial, and industrial use. Enjoy lower emissions and cost-effective energy.</p>
+                    </div>
+                </div><!-- End Icon Box --> --}}
 
                 </div>
 
@@ -99,7 +107,7 @@
 
         </div>
 
-    </section> --}}
+    </section>
     <!-- /Alt Services 2 Section -->
 
 @if (!is_null($Team) && $Team->isNotEmpty())
